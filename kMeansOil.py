@@ -1,5 +1,4 @@
-"""
-"""
+
 import pandas as pd
 import numpy as np 
 import matplotlib.pyplot as plt
@@ -7,7 +6,6 @@ from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import Normalizer
-
 #-----------------------------------------------------------------------------
 #Observo correlacion (YPF ; WTI)
 data = pd.read_excel("Oil.xlsx")
@@ -51,7 +49,6 @@ plt.xlabel('N° of clusters, k')
 plt.ylabel('Silhouette Score')
 plt.xticks(K)
 plt.show()
-
 #-----------------------------------------------------------------------------
 # Parametrización
 papel = "YPF" # Disponibles: XOM RDSa BP PAM YPF CVX COP EOG SLB VLO WMB
@@ -83,10 +80,8 @@ for c in range(n):
     plt.gca().annotate("R^2 ="+str(co), coords, fontsize=13, c="white")
 
 plt.show()
-
 #-----------------------------------------------------------------------------
 #Clustering Stocks
-
 tickers = ['WTI', 'XOM', 'RDSa', 'BP', 'PAM', 'YPF', 'CVX', 'COP',
            'EOG', 'SLB', 'VLO', 'WMB']
 
@@ -151,8 +146,3 @@ label_pip = pipeline.predict(array)
 df = pd.DataFrame({'labels': label_pip, 'companies': companies})
 print(df.sort_values('labels')) 
     
-
-
-
-
- 
